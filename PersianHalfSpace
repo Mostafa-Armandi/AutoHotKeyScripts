@@ -9,6 +9,6 @@ WinGet, WinID,, A
 ThreadID:=DllCall("GetWindowThreadProcessId", "UInt", WinID, "UInt", 0)
 InputLocaleID:=DllCall("GetKeyboardLayout", "UInt", ThreadID, "UInt") & 0xFFFF
 ;MsgBox, %InputLocaleID%
-if (InputLocaleID = 0x429){
+if (InputLocaleID = 0x429){ ;Persian Local ID (LCID)
 	Send {ASC 0157}
 }
